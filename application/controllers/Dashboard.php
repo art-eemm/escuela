@@ -8,7 +8,6 @@ class Dashboard extends CI_Controller {
         $this->load->model('Escuela_model');
     }
 
-
     public function index() {
         $data['alumnos'] = $this->Escuela_model->get_alumnos_completo();
         $data['grupos']   = $this->Escuela_model->get_grupos_completo();
@@ -45,7 +44,6 @@ class Dashboard extends CI_Controller {
         );
 
         $id = $this->input->post('id_grupo');
-
         if($id) {
             $this->Escuela_model->actualizar('grupos', $id, $data);
         } else {
@@ -56,7 +54,37 @@ class Dashboard extends CI_Controller {
 
     public function guardar_carrera() {
         $data = array('nombre' => $this->input->post('nombre'));
-        $this->Escuela_model->insertar('carreras', $data);
+        
+        $id = $this->input->post('id_carrera');
+        if($id) {
+            $this->Escuela_model->actualizar('carreras', $id, $data);
+        } else {
+            $this->Escuela_model->insertar('carreras', $data);
+        }
+        redirect('dashboard');
+    }
+
+    public function guardar_turno() {
+        $data = array('nombre' => $this->input->post('nombre'));
+        
+        $id = $this->input->post('id_turno');
+        if($id) {
+            $this->Escuela_model->actualizar('turnos', $id, $data);
+        } else {
+            $this->Escuela_model->insertar('turnos', $data);
+        }
+        redirect('dashboard');
+    }
+
+    public function guardar_grado() {
+        $data = array('nombre' => $this->input->post('nombre'));
+        
+        $id = $this->input->post('id_grado');
+        if($id) {
+            $this->Escuela_model->actualizar('grados', $id, $data);
+        } else {
+            $this->Escuela_model->insertar('grados', $data);
+        }
         redirect('dashboard');
     }
 

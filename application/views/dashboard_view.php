@@ -23,6 +23,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4>Agregar Alumno</h4>
+                    <!-- Mantiene la misma ruta -->
                     <form action="<?= base_url('dashboard/guardar_alumno') ?>" method="post" id="formAlumnos">
                         <input type="hidden" name="id_alumno" id="id_alumno"> 
 
@@ -86,8 +87,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4 class="mb-3">Gestión de Grupos</h4>
+                    <!-- Mantiene la misma ruta -->
                     <form action="<?= base_url('dashboard/guardar_grupo') ?>" method="post" id="formGrupos">
-                        
                         <input type="hidden" name="id_grupo" id="id_grupo">
 
                         <div class="mb-3">
@@ -177,6 +178,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4 class="mb-3">Gestión de Carreras</h4>
+                    <!-- Nueva ruta con funcionalidad completa -->
                     <form action="<?= base_url('dashboard/guardar_carrera') ?>" method="post" id="formCarreras">
                         <input type="hidden" name="id_carrera" id="id_carrera">
                         <div class="mb-3">
@@ -224,6 +226,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4 class="mb-3">Gestión de Turnos</h4>
+                    <!-- Nueva ruta -->
                     <form action="<?= base_url('dashboard/guardar_turno') ?>" method="post" id="formTurnos">
                         <input type="hidden" name="id_turno" id="id_turno">
                         <div class="mb-3">
@@ -271,6 +274,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <h4 class="mb-3">Gestión de Grados</h4>
+                    <!-- Nueva ruta -->
                     <form action="<?= base_url('dashboard/guardar_grado') ?>" method="post" id="formGrados">
                         <input type="hidden" name="id_grado" id="id_grado">
                         <div class="mb-3">
@@ -320,7 +324,6 @@
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         
-        // Funcionalidad para alumnos
         const botonesEditar = document.querySelectorAll(".btn-editar");
         botonesEditar.forEach(boton => {
             boton.addEventListener("click", function() {
@@ -340,7 +343,6 @@
             });
         });
 
-        // Funcionalidad para grupos
         const botonesEditarGrupo = document.querySelectorAll(".btn-editar-grupo");
         botonesEditarGrupo.forEach(boton => {
             boton.addEventListener("click", function() {
