@@ -93,4 +93,9 @@ class Dashboard extends CI_Controller {
         redirect('dashboard');
     }
 
+    public function cambiar_estado($tabla, $id) {
+    $this->Escuela_model->cambiar_estado($tabla, $id);
+    redirect('dashboard');
+}
+
 }
